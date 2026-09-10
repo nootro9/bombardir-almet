@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бронь стола — спорт-бар БомБАРдир</title>
+<meta name="description" content="Забронируйте стол у экрана в спорт-баре «БомБАРдир» в Альметьевске: форма собирает готовое сообщение для WhatsApp или телеграма.">
+<meta name="theme-color" content="#0A1018">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="mark" href="index.html"><span>Бом</span><b>БАР</b><span>дир</span></a>
+    <nav class="nav" id="nav">
+      <a href="index.html" data-nav="home">Бар</a>
+      <a href="index.html#afisha" data-nav="afisha">Афиша</a>
+      <a href="menu.html" data-nav="menu">Меню</a>
+      <a href="book.html" data-nav="book" aria-current="page">Бронь стола</a>
+      <a href="index.html#contacts" data-nav="contacts">Контакты</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Меню сайта" aria-expanded="false">☰</button>
+    <a class="call" href="tel:+79869020811">+7&nbsp;986&nbsp;902-08-11</a>
+  </div>
+</header>
+
+<div class="led" id="top">
+  <div class="wrap led-in">
+    <span class="dot" id="statusDot"></span>
+    <span id="statusText">Бар в&nbsp;отпуске&nbsp;— открываемся 24&nbsp;сентября</span>
+    <span class="led-sub" id="statusSub">Альметьевск, Ленина, 24&nbsp;· вход со&nbsp;стороны Пушкина</span>
+  </div>
+</div>
+<main>
+<div class="phead">
+  <div class="wrap phead-in">
+    <p class="eyebrow">Бронь стола</p>
+    <h1>Займите место у&nbsp;экрана заранее</h1>
+    <p class="lede">На&nbsp;громкие матчи свободных мест не&nbsp;остаётся уже за&nbsp;полчаса до&nbsp;свистка. Заполните форму&nbsp;— мы&nbsp;соберём готовое сообщение, вам останется отправить его в&nbsp;мессенджере.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="two" style="align-items:start">
+      <div class="book">
+        <form class="form" id="bookForm" novalidate>
+          <div class="field">
+            <label for="bDate">Дата</label>
+            <input type="date" id="bDate" required>
+          </div>
+          <div class="field">
+            <label for="bTime">Время</label>
+            <input type="time" id="bTime" value="19:00" required>
+          </div>
+          <div class="field">
+            <label for="bGuests">Гостей</label>
+            <select id="bGuests">
+              <option>2</option><option>3</option><option selected>4</option>
+              <option>5</option><option>6</option><option>8</option><option>больше 8</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bMatch">Какой матч смотрите</label>
+            <input type="text" id="bMatch" placeholder="например, «Ак Барс»" autocomplete="off">
+          </div>
+          <div class="field form-wide">
+            <label for="bName">Имя и&nbsp;телефон для связи</label>
+            <input type="text" id="bName" placeholder="Ильдар, +7 917 000-00-00" autocomplete="name">
+          </div>
+        </form>
+
+        <div class="preview">
+          <div class="preview-label">Текст брони</div><span id="bPreview"></span>
+        </div>
+
+        <div class="book-actions">
+          <a class="btn btn-a" id="bWa" href="https://wa.me/79178835742" target="_blank" rel="noopener">Отправить в&nbsp;WhatsApp</a>
+          <a class="btn btn-b" id="bTg" href="https://t.me/bombardiralmet" target="_blank" rel="noopener">Скопировать и&nbsp;открыть телеграм</a>
+          <a class="btn btn-b" href="tel:+79869020811">Позвонить</a>
+        </div>
+        <p class="book-note">WhatsApp откроется с&nbsp;уже набранным текстом. Телеграм текст не&nbsp;подставляет&nbsp;— мы&nbsp;скопируем его в&nbsp;буфер, останется вставить в&nbsp;чат. Без вашего «Отправить» ничего никуда не&nbsp;уходит; бронь подтверждает администратор.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div>
+          <h3 style="color:var(--amber);padding-bottom:12px;border-bottom:2px solid var(--amber)">Что важно знать</h3>
+          <ul class="hours" style="margin-top:20px">
+            <li><span class="d">Стол держим 20&nbsp;минут после назначенного времени</span></li>
+            <li><span class="d">Компанию от&nbsp;восьми человек лучше согласовать за&nbsp;день</span></li>
+            <li><span class="d">Свой матч поставим на&nbsp;второй экран&nbsp;— предупредите заранее</span></li>
+            <li><span class="d">Со&nbsp;своим алкоголем в&nbsp;бар нельзя</span></li>
+            <li><span class="d">Вход в&nbsp;бар&nbsp;— 18+</span></li>
+          </ul>
+        </div>
+
+        <div class="chan">
+          <a href="tel:+79869020811"><span class="l">+7&nbsp;986&nbsp;902-08-11</span><span class="r">Основной</span></a>
+          <a href="tel:+79178835742"><span class="l">+7&nbsp;917&nbsp;883-57-42</span><span class="r">Второй</span></a>
+          <a href="https://t.me/bombardiralmet" target="_blank" rel="noopener"><span class="l">Телеграм-канал</span><span class="r"><b>Афиша матчей</b></span></a>
+        </div>
+
+        <img src="assets/img/hall2.jpg" alt="Зал спорт-бара со столами напротив большого экрана" style="border:1px solid var(--line);border-radius:3px">
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site">
+  <div class="wrap foot">
+    <div style="max-width:38ch;display:flex;flex-direction:column;gap:12px">
+      <a class="mark" href="index.html" style="font-size:24px"><span>Бом</span><b>БАР</b><span>дир</span></a>
+      <p>Спорт-бар в&nbsp;самом центре Альметьевска. Показываем матчи, кормим и&nbsp;возим еду по&nbsp;городу.</p>
+    </div>
+    <ul>
+      <li><a href="index.html#afisha">Афиша трансляций</a></li>
+      <li><a href="menu.html">Меню и&nbsp;цены</a></li>
+      <li><a href="index.html#delivery">Доставка</a></li>
+      <li><a href="book.html">Бронь стола</a></li>
+      <li><a href="index.html#contacts">Как найти</a></li>
+    </ul>
+    <ul>
+      <li><a href="https://t.me/bombardiralmet" target="_blank" rel="noopener">Телеграм</a></li>
+      <li><a href="https://vk.ru/sportbar_almet" target="_blank" rel="noopener">ВКонтакте</a></li>
+      <li><a href="https://max.ru/id164413257616_biz" target="_blank" rel="noopener">Max</a></li>
+      <li><a href="https://wa.me/79178835742" target="_blank" rel="noopener">WhatsApp</a></li>
+      <li><a href="mailto:bombardir.almet@mail.ru">bombardir.almet@mail.ru</a></li>
+    </ul>
+    <div style="max-width:34ch;display:flex;gap:14px;align-items:flex-start">
+      <span class="age" aria-hidden="true">18+</span>
+      <p>ИП&nbsp;Курбанов Эдуард Тагирович<br>ОГРНИП&nbsp;321169000138721, ИНН&nbsp;164413257616</p>
+    </div>
+    <!-- СНЯТЬ В ДЕНЬ ЗАПУСКА на домене заведения -->
+    <div style="flex-basis:100%;border-top:1px solid var(--line);padding-top:18px">
+      <p style="font-size:12.5px">Прототип сайта. Не&nbsp;является официальным сайтом спорт-бара «БомБАРдир»</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

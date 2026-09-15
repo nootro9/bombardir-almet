@@ -36,9 +36,9 @@
       var el = document.querySelector(sel);
       if (el) ro.observe(el);
     });
-  } else {
-    window.addEventListener("resize", measureChrome);
   }
+  window.addEventListener("resize", measureChrome);
+  window.addEventListener("orientationchange", measureChrome);
 
   /* ── время бара: Альметьевск живёт по Москве, UTC+3 ── */
   function barNow(){
@@ -128,7 +128,7 @@
     var bookingText = function(){
       var d = dateEl.value ? dateEl.value.split("-").reverse().join(".") : "—";
       var parts = [
-        "Здравствуйте! Хочу забронировать стол в «БомБАРдире».",
+        "Здравствуйте! Хочу забронировать стол в «БомБАРдире».",
         "Дата: " + d,
         "Время: " + ($("bTime").value || "—"),
         "Гостей: " + $("bGuests").value

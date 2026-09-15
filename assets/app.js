@@ -21,6 +21,25 @@
     });
   }
 
+  /* ── высота шапки со строкой статуса: от неё считается высота первого экрана.
+     На узком экране строка статуса переносится, поэтому меряем, а не угадываем. ── */
+  function measureChrome(){
+    var top = document.querySelector(".top"), led = document.querySelector(".led");
+    if (!top || !led) return;
+    var h = Math.round(top.getBoundingClientRect().height + led.getBoundingClientRect().height);
+    document.documentElement.style.setProperty("--chrome", h + "px");
+  }
+  measureChrome();
+  if (window.ResizeObserver) {
+    var ro = new ResizeObserver(measureChrome);
+    [".top", ".led"].forEach(function(sel){
+      var el = document.querySelector(sel);
+      if (el) ro.observe(el);
+    });
+  } else {
+    window.addEventListener("resize", measureChrome);
+  }
+
   /* ── время бара: Альметьевск живёт по Москве, UTC+3 ── */
   function barNow(){
     var n = new Date();
@@ -134,4 +153,8 @@
       if (navigator.clipboard) navigator.clipboard.writeText(bookingText()).catch(function(){});
     });
   }
+
+  /* строку статуса мы уже переписали, а шрифты ещё грузятся — перемеряем оба раза */
+  measureChrome();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureChrome);
 })();

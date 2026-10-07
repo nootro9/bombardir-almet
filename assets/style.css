@@ -292,6 +292,8 @@ section{ padding-block:clamp(56px,8.5vw,110px) }
 .del-cta{ margin-top:auto; padding-top:26px }
 #delivery .head{ margin-bottom:32px }
 #delivery .lede{ max-width:46ch }
+.hours-cap{ font:700 11.5px/1 var(--t); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--amber); margin-bottom:14px }
 .hours{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line) }
 .hours li{ display:flex; justify-content:space-between; gap:16px; align-items:baseline;
   padding:14px 0; border-bottom:1px solid var(--line) }

@@ -216,27 +216,31 @@ section{ padding-block:clamp(56px,8.5vw,110px) }
 }
 .gallery figcaption{ font-size:13.5px; line-height:1.4; color:var(--muted); padding-left:13px;
   border-left:2px solid var(--amber) }
-.gallery figure:not(.g-wide):not(.g-side){ grid-column:span 2 }
-.g-wide{ grid-column:span 4 }
-.g-wide img{ aspect-ratio:16/9 }
-.g-side{ grid-column:span 2 }
-.g-side img{ aspect-ratio:8/9 }
+/* Пропорции ячеек совпадают с родными пропорциями снимков, поэтому кадры
+   не обрезаются: 16:9 у широкого, 3:4 у вертикального, 3:2 у половинных. */
+.gallery figure.g-wide{ grid-column:span 4 }
+.gallery figure.g-wide img{ aspect-ratio:16/9 }
+.gallery figure.g-side{ grid-column:span 2 }
+/* вертикальный кадр 3:4 в ячейке 8:9 теряет по краям — смещаем кадрирование
+   вверх, чтобы экран остался целиком, а срезались тёмные спинки стульев */
+.gallery figure.g-side img{ aspect-ratio:8/9; object-position:50% 32% }
+.gallery figure.g-half{ grid-column:span 3 }
+.gallery figure.g-half img{ aspect-ratio:3/2 }
 
-/* Селекторы ниже повторяют форму базовых — иначе :not() из основного блока
-   перебивает их по специфичности и на узком экране остаются широкие ячейки. */
+/* Ниже селекторы той же формы, что и базовые: иначе .gallery figure.g-wide img
+   перебивает по специфичности и на узком экране остаются широкие ячейки.
+   На планшете все шесть кадров равны — получается ровно три ряда по два. */
 @media (max-width:900px){
-  .gallery{ grid-template-columns:repeat(4,1fr) }
-  .gallery figure:not(.g-wide):not(.g-side){ grid-column:span 2 }
-  .gallery figure.g-wide{ grid-column:span 4 }
-  .gallery figure.g-wide img{ aspect-ratio:16/9 }
-  .gallery figure.g-side{ grid-column:span 2 }
-  .gallery figure.g-side img{ aspect-ratio:3/2 }
+  .gallery{ grid-template-columns:repeat(2,1fr) }
+  .gallery figure.g-wide,
+  .gallery figure.g-side,
+  .gallery figure.g-half{ grid-column:span 1 }
+  .gallery figure.g-wide img,
+  .gallery figure.g-side img,
+  .gallery figure.g-half img{ aspect-ratio:3/2; object-position:50% 50% }
 }
 @media (max-width:560px){
   .gallery{ grid-template-columns:1fr }
-  .gallery figure:not(.g-wide):not(.g-side){ grid-column:span 1 }
-  .gallery figure.g-wide, .gallery figure.g-side{ grid-column:span 1 }
-  .gallery figure img{ aspect-ratio:3/2 }
 }
 
 /* ─────────── меню ─────────── */

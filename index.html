@@ -29,7 +29,9 @@
 <div class="led" id="top">
   <div class="wrap led-in">
     <span class="dot" id="statusDot"></span>
-    <span id="statusText">Бар в&nbsp;отпуске&nbsp;— открываемся 24&nbsp;сентября</span>
+    <!-- Запасной текст на случай, если скрипт не отработал: дальше его
+         заменяет живой статус «открыто / закрыто» из app.js -->
+    <span id="statusText">Пн&nbsp;— чт до&nbsp;02:00, пт&nbsp;и&nbsp;сб&nbsp;— до&nbsp;03:00</span>
     <span class="led-sub" id="statusSub">Альметьевск, Ленина, 24&nbsp;· вход со&nbsp;стороны Пушкина</span>
   </div>
 </div><main>
@@ -65,8 +67,8 @@
       <div class="slate-main">
         <ul class="match-list" id="matchList"></ul>
         <div class="empty-slot" id="matchEmpty">
-          <b>Расписание вернётся 24&nbsp;сентября</b>
-          Пока команда в&nbsp;отпуске, здесь пусто. Анонсы ближайших матчей всегда выходят в&nbsp;нашем телеграм-канале&nbsp;— подпишитесь, чтобы не&nbsp;искать.
+          <b>Ближайшие матчи&nbsp;— в&nbsp;телеграме</b>
+          Там мы&nbsp;заранее пишем, что&nbsp;и&nbsp;во&nbsp;сколько включаем: от&nbsp;туров РПЛ и&nbsp;АПЛ до&nbsp;вечеров UFC. Подпишитесь, чтобы не&nbsp;искать.
         </div>
         <ul class="leagues">
           <li>РПЛ</li><li>АПЛ</li><li>Лига чемпионов</li><li>КХЛ</li><li>ВХЛ</li><li>UFC</li><li>Бокс</li>
@@ -132,22 +134,26 @@
 
     <div class="gallery">
       <figure class="g-wide">
-        <img src="assets/img/ufc.jpg" alt="Гости смотрят бой UFC на большом экране в полумраке зала">
-        <figcaption>Вечер боёв: свет приглушаем, звук выводим на&nbsp;зал</figcaption>
+        <img src="assets/img/fans.jpg" alt="Двое гостей смеются за столом, на стене джерси «Ак Барса», на экране идёт хоккей">
+        <figcaption>Хоккей идёт&nbsp;— за&nbsp;столом уже не&nbsp;сидится</figcaption>
       </figure>
       <figure class="g-side">
-        <img src="assets/img/fans.jpg" alt="Двое гостей смотрят футбольный матч на большом экране">
-        <figcaption>Дневной матч&nbsp;— с&nbsp;одиннадцати утра</figcaption>
+        <img src="assets/img/ufc.jpg" alt="Гости смотрят бой UFC на большом экране в полумраке зала">
+        <figcaption>Вечер боёв: свет приглушаем, звук выводим в&nbsp;зал</figcaption>
       </figure>
-      <figure>
+      <figure class="g-half">
+        <img src="assets/img/beer.jpg" alt="Компания гостей за столом с закусками во время матча">
+        <figcaption>Компании приходят сюда целиком</figcaption>
+      </figure>
+      <figure class="g-half">
         <img src="assets/img/hall.jpg" alt="Зал бара с экраном и столами вдоль белой кирпичной стены">
         <figcaption>Экран видно с&nbsp;любого стола</figcaption>
       </figure>
-      <figure>
+      <figure class="g-half">
         <img src="assets/img/gamepad.jpg" alt="Гости играют на приставке за столом с закусками">
         <figcaption>Между матчами экран занимает приставка</figcaption>
       </figure>
-      <figure>
+      <figure class="g-half">
         <img src="assets/img/jersey.jpg" alt="Хоккейное джерси «Ак Барса» на белой кирпичной стене">
         <figcaption>Джерси «Ак&nbsp;Барса» и&nbsp;полсотни фото в&nbsp;рамках</figcaption>
       </figure>

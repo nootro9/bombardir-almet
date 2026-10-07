@@ -45,9 +45,6 @@
     var n = new Date();
     return new Date(n.getTime() + (n.getTimezoneOffset() + 180) * 60000);
   }
-  /* открытие после отпуска: 24 сентября 2026, 11:00 */
-  var REOPEN = new Date(2026, 8, 24, 11, 0, 0);
-
   /* график: [час открытия, час закрытия следующим утром] по дню недели (0 — вс) */
   var SCHEDULE = { 0:[10,2], 1:[11,2], 2:[11,2], 3:[11,2], 4:[11,2], 5:[11,3], 6:[10,3] };
 
@@ -63,22 +60,14 @@
   var dot = $("statusDot"), txt = $("statusText"), sub = $("statusSub");
 
   if (txt && sub) {
-    if (now < REOPEN) {
-      var days = Math.ceil((REOPEN - now) / 86400000);
-      var tail = (days % 10 === 1 && days % 100 !== 11) ? "день"
-               : ([2,3,4].indexOf(days % 10) > -1 && [12,13,14].indexOf(days % 100) === -1) ? "дня" : "дней";
-      txt.textContent = "Бар в отпуске — открываемся 24 сентября";
-      sub.textContent = "Осталось " + days + " " + tail + " · Ленина, 24, вход со стороны Пушкина";
+    var st = openState(now);
+    if (st.open) {
+      if (dot) dot.classList.add("on");
+      txt.textContent = "Открыто — работаем до " + two(st.until) + ":00";
     } else {
-      var st = openState(now);
-      if (st.open) {
-        if (dot) dot.classList.add("on");
-        txt.textContent = "Открыто — работаем до " + two(st.until) + ":00";
-      } else {
-        txt.textContent = "Закрыто — откроемся в " + two(st.from) + ":00";
-      }
-      sub.textContent = "Альметьевск, Ленина, 24 · вход со стороны Пушкина";
+      txt.textContent = "Закрыто — откроемся в " + two(st.from) + ":00";
     }
+    sub.textContent = "Альметьевск, Ленина, 24 · вход со стороны Пушкина";
   }
 
   /* ── подсветка сегодняшней строки в графике доставки ── */
